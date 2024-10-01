@@ -1,0 +1,3 @@
+ng new faq-angular --skip-tests
+ng build
+ng serve

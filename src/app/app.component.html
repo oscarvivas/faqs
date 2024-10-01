@@ -1,0 +1,40 @@
+<main>
+
+  <div class="card">
+    <header>
+      <object id="start_icon"></object>
+      <h1>FAQs</h1>
+    </header>
+
+    <section>
+
+      <ul>
+        
+        <li *ngFor="let faq of faqs">
+          <div class="question" (click)=ShowAnswer(faq) >
+            <h3 [ngClass]="{
+                  'question-open' : faq.show,
+                  'question-close' : !faq.show
+                  }">{{ faq.question }}</h3>
+
+            <button [ngClass]="{
+                        'btnminus' : faq.show,
+                        'btnplus' : !faq.show
+                      }"></button>
+          </div>
+          <p id="{{faq.id}}" *ngIf="faq.show">{{ faq.answer }}</p>
+          <hr class="solid">
+        </li>
+
+      </ul>
+    
+    </section>
+  
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Oscar Vivas</a>.
+    </div>
+
+  </div>
+
+</main>
